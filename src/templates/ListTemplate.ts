@@ -53,11 +53,12 @@ export default class ListTemplate implements DOMList {
       });
 
       const label = document.createElement("label") as HTMLLabelElement;
+      label.htmlFor = item.id;
       label.textContent = item.item;
-      li.append(input);
+      li.append(label);
 
       const button = document.createElement("button") as HTMLButtonElement;
-      button.className = "button";
+      button.className = "button listItem__button";
       button.textContent = "X";
       li.append(button);
       button.addEventListener("click", () => {
@@ -68,5 +69,7 @@ export default class ListTemplate implements DOMList {
 
       this.ul.append(li);
     });
+
+    console.log("ListTemplate render() fullList.list:", fullList.list);
   }
 }
