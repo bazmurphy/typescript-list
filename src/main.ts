@@ -1,4 +1,5 @@
 import "./css/style.css";
+
 import FullList from "./model/FullList";
 import ListItem from "./model/ListItem";
 import ListTemplate from "./templates/ListTemplate";
@@ -52,5 +53,7 @@ const initApp = (): void => {
   template.render(fullList);
 };
 
+initApp();
+
 // we have used "defer" in the script tag on the HTML, so we don't really need to use this:
-document.addEventListener("DOMContentLoaded", initApp);
+// document.addEventListener("DOMContentLoaded", initApp);
